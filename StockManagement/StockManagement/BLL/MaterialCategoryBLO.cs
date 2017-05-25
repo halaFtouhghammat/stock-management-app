@@ -1,4 +1,4 @@
-﻿// Mariam Ait Al
+﻿// hala Ftouh ghammat 
 
 using StockManagement.BAL;
 using StockManagement.DAL;
@@ -26,6 +26,23 @@ namespace StockManagement.BLL
 
         public MaterialCategoryBLO() : base()
         {
+        }
+               public int getMaterialNumbre(int id)
+        {
+            var query = from mc in db.MaterialCategories
+                        join m in db.Materials
+                        on mc.Id equals m.Materialcategory.Id
+                        where mc.Id == id
+                        select new
+
+                        {
+                            // Count( m.InventoryNumber),
+                            mc.Designation,
+                            mc.Description,
+                            mc.DateCreation,
+                            mc.DateModification,
+                        };
+            return query.ToList().Count();
         }
     }
 }

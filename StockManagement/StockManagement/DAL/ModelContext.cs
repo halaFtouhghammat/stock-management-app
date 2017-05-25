@@ -56,7 +56,12 @@ namespace StockManagement.DAL
         public virtual DbSet<Employee> Personnes { get; set; }
         public virtual DbSet<Service> Services { get; set; }
         public virtual DbSet<Material> Materials { get; set; }
+        //
+        public virtual DbSet<configuration> Configurations { get; set; }
+        public virtual DbSet<Order>Orders { get; set; }
+        public virtual DbSet<OrderLine> orderLines { get; set; }
     }
+
 
     //public class MyEntity
     //{

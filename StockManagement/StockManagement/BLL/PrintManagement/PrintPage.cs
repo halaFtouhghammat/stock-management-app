@@ -3,8 +3,10 @@
 
 using iTextSharp.text;
 using iTextSharp.text.pdf;
+using StockManagement.Entities.Resources.Service;
 using System;
 using System.Collections.Generic;
+using System.Drawing.Imaging;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,7 +25,8 @@ namespace StockManagement.BLL.PrintManagement
             file.AddImage(doc, 50f, 100f, 22f, doc.PageSize.Width - 36f - 72f, doc.PageSize.Height / 2 + 320, Resources.SanteHeader.Sante, ImageFormat.Bmp);
             //
 
-            file.CreateText(doc, writer, "Inventaire de Materiels de Service : " + service.Name.French, doc.PageSize.Width / 2 - 85, doc.PageSize.Height / 2 + 250, false, true);
+           // file.CreateText(doc, writer, "Inventaire de Materiels de Service : " + Service.Name.
+              //  French, doc.PageSize.Width / 2 - 85, doc.PageSize.Height / 2 + 250, false, true);
         }
     }
 }

@@ -165,7 +165,27 @@
             //RoleAdmin.Authorizations.Add(SocieteAuthorizations);
 
             context.SaveChanges();
+            //
+            //order
+            Authorization OrderAuthorizations = new Authorization();
+            OrderAuthorizations.BusinessEntity = typeof(Order).FullName;
+            RoleAdmin.Authorizations.Add(OrderAuthorizations);
 
+            context.SaveChanges();
+            //
+            //orderline
+            Authorization OrderLineAuthorizations = new Authorization();
+            OrderLineAuthorizations.BusinessEntity = typeof(OrderLine).FullName;
+            RoleAdmin.Authorizations.Add(OrderLineAuthorizations);
+
+            context.SaveChanges();
+            //
+            //Configuration
+            Authorization ConfigurationAuthorizations = new Authorization();
+           ConfigurationAuthorizations.BusinessEntity = typeof(configuration).FullName;
+            RoleAdmin.Authorizations.Add(ConfigurationAuthorizations);
+
+            context.SaveChanges();
 
 
             //

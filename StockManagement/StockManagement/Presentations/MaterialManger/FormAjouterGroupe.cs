@@ -1,4 +1,5 @@
 ﻿using App.Gwin.Attributes;
+using StockManagement.Entities.Materials;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,8 +12,8 @@ using System.Windows.Forms;
 
 namespace StockManagement
 {
-    //[Menu(EntityType = typeof(Entities.Material), Order = 10, Title = "AjouterGroupe")]
-  //  [Menu(Group ="Societe")]
+    [Menu(EntityType = typeof(Material), Order = 10, Title = "AjouterGroupe")]
+  //  [Menu(Group = "Societe")]
     public partial class FormAjouterGroupe : Form
     {
         public FormAjouterGroupe()

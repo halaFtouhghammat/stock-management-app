@@ -105,8 +105,26 @@
     <Compile Include="BLL\PrintManagement\PrintPage.cs" />
     <Compile Include="BLL\ServiceBLO.cs" />
     <Compile Include="DAL\ModelContext.cs" />
+    <Compile Include="Entities\Configuration\configuration.cs" />
     <Compile Include="Entities\Delivery.cs" />
     <Compile Include="Entities\Materials\Material.cs" />
+    <Compile Include="Entities\Order\OrderLine.cs" />
+    <Compile Include="Entities\Order\Order.cs" />
+    <Compile Include="Entities\Resources\configuration\configuration1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>configuration.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Resources\OrderLine\OrderLine.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OrderLine.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Resources\Order\Order.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Order.resx</DependentUpon>
+    </Compile>
     <Compile Include="Entities\Societe\Location.cs" />
     <Compile Include="Entities\Materials\MaterialInOut.cs" />
     <Compile Include="Entities\Materials\MaterialCategory.cs" />
@@ -228,26 +246,40 @@
     </Compile>
     <Compile Include="Entities\Societe\Service.cs" />
     <Compile Include="Enumerations\PhysicalState.cs" />
-    <Compile Include="Libs\ITextSharp\PdfFile.cs" />
-    <Compile Include="Migrations\201705220948296_Create_data.cs" />
-    <Compile Include="Migrations\201705220948296_Create_data.Designer.cs">
-      <DependentUpon>201705220948296_Create_data.cs</DependentUpon>
+    <Compile Include="FormMenuApplication.cs">
+      <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Migrations\201705220949380_Update_Material_Class.cs" />
-    <Compile Include="Migrations\201705220949380_Update_Material_Class.Designer.cs">
-      <DependentUpon>201705220949380_Update_Material_Class.cs</DependentUpon>
+    <Compile Include="FormMenuApplication.Designer.cs" />
+    <Compile Include="Libs\ITextSharp\PdfFile.cs" />
+    <Compile Include="Migrations\201705231301122_add_tables.cs" />
+    <Compile Include="Migrations\201705231301122_add_tables.Designer.cs">
+      <DependentUpon>201705231301122_add_tables.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Presentations\MaterialCategoryManager\MaterialCategoryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentations\MaterialCategoryManager\MaterialCategoryForm.designer.cs">
+      <DependentUpon>MaterialCategoryForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentations\MaterialCategoryManager\MaterialCategoryGridUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Presentations\MaterialCategoryManager\MaterialCategoryGridUC.Designer.cs">
+      <DependentUpon>MaterialCategoryGridUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentations\MaterialCategoryManager\MaterialCategoryUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Presentations\MaterialCategoryManager\MaterialCategoryUC.Designer.cs">
+      <DependentUpon>MaterialCategoryUC.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentations\MaterialManger\FormAjouterGroupe.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Presentations\MaterialManger\FormAjouterGroupe.designer.cs">
       <DependentUpon>FormAjouterGroupe.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormMenuApplication.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormMenuApplication.Designer.cs" />
     <Compile Include="Presentations\Print Materials List\By Location\FormPrintByLocation.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -272,6 +304,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>SanteHeader.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Entities\Resources\configuration\configuration.ar.resx" />
+    <EmbeddedResource Include="Entities\Resources\configuration\configuration.fr.resx" />
+    <EmbeddedResource Include="Entities\Resources\configuration\configuration.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>configuration1.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Entities\Resources\Delivery\Delivery.ar.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Delivery.ar.Designer.cs</LastGenOutput>
@@ -340,6 +378,18 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Material.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Entities\Resources\OrderLine\OrderLine.ar.resx" />
+    <EmbeddedResource Include="Entities\Resources\OrderLine\OrderLine.fr.resx" />
+    <EmbeddedResource Include="Entities\Resources\OrderLine\OrderLine.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>OrderLine.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Entities\Resources\Order\Order.ar.resx" />
+    <EmbeddedResource Include="Entities\Resources\Order\Order.fr.resx" />
+    <EmbeddedResource Include="Entities\Resources\Order\Order.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Order.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Entities\Resources\Service\Service.ar.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Service.ar.Designer.cs</LastGenOutput>
@@ -365,11 +415,17 @@
       <LastGenOutput>Societe.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="FormMenuApplication.resx" />
-    <EmbeddedResource Include="Migrations\201705220948296_Create_data.resx">
-      <DependentUpon>201705220948296_Create_data.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201705231301122_add_tables.resx">
+      <DependentUpon>201705231301122_add_tables.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201705220949380_Update_Material_Class.resx">
-      <DependentUpon>201705220949380_Update_Material_Class.cs</DependentUpon>
+    <EmbeddedResource Include="Presentations\MaterialCategoryManager\MaterialCategoryForm.resx">
+      <DependentUpon>MaterialCategoryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentations\MaterialCategoryManager\MaterialCategoryGridUC.resx">
+      <DependentUpon>MaterialCategoryGridUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentations\MaterialCategoryManager\MaterialCategoryUC.resx">
+      <DependentUpon>MaterialCategoryUC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentations\MaterialManger\FormAjouterGroupe.resx">
       <DependentUpon>FormAjouterGroupe.cs</DependentUpon>
@@ -401,6 +457,7 @@
     <None Include="App.config" />
     <None Include="Entities\StockManagementClasses.cd" />
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\StockManagement.Entities.MaterialCategory.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -417,7 +474,12 @@
   <ItemGroup>
     <None Include="Resources\Sante.PNG" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\téléchargement %284%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\7355a21cbdd614a7920a74479865542f.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
